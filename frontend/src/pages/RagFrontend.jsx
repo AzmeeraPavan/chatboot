@@ -49,7 +49,7 @@ const RagFrontend = () => {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
       <h1 className="text-2xl font-bold mb-4">SID Chatbot</h1>
 
-      <div className="w-full max-w-xl bg-white rounded-lg shadow p-4 mb-4 h-[500px] overflow-y-auto">
+      <div className="w-full max-w-xl bg-white rounded-lg shadow p-4 mb-4 h-[400px] overflow-y-auto">
         {chat.map((msg, idx) => (
           <motion.div
             key={idx}
