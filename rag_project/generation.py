@@ -1,4 +1,3 @@
-from transformers import AutoModelForSeq2SeqLM
 
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, pipeline
 import config
