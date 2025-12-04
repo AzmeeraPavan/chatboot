@@ -1,5 +1,7 @@
 # Paths
-DATA_DIR = r"C:\Users\PavanAzmeeraSIDGloba\rowdata"
+
+
+DATA_DIR = r"C:\Users\PavanAzmeeraSIDGloba\rowdata" #here you the input data need to feed
 VECTOR_DIR = r"C:\vectorData\langchain_faiss"
 
 # Models

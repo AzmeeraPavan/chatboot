@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import threading
+from file_watcher import start_watching
 import indexing
 import retrieval
 import generation
@@ -9,11 +11,16 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # your React frontend
+    allow_origins=["http://localhost:5174"],  # your React frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+@app.on_event("startup")
+def start_background_watch():
+    thread = threading.Thread(target=start_watching, args=("C:/Users/PavanAzmeeraSIDGloba/rowdata",), daemon=True)
+    thread.start()
+    print("🔥 Auto Chunk + Index updater activated")
 
 # ----------------- Models -----------------
 class QueryPayload(BaseModel):
